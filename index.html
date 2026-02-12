@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Favorite Person 💌</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #800020, #f8c8dc, #f5f0e6);
+    color: #4a2c2a;
+    overflow-x: hidden;
+}
+
+section {
+    min-height: 100vh;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 1s ease;
+}
+
+section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h1, h2 {
+    margin-bottom: 20px;
+}
+
+p {
+    max-width: 700px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+button {
+    padding: 12px 25px;
+    border: none;
+    background: #800020;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #a8324a;
+    transform: scale(1.05);
+}
+
+.hidden {
+    display: none;
+}
+
+.heart {
+    font-size: 30px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1);}
+    50% { transform: scale(1.2);}
+    100% { transform: scale(1);}
+}
+
+footer {
+    padding: 30px;
+    font-size: 14px;
+}
+  .photo-grid {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.photo-grid img {
+    width: 150px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    transition: 0.4s;
+}
+
+.photo-grid img:hover {
+    transform: scale(1.05);
+}
+  .heart-bg {
+    position: fixed;
+    top: -10px;
+    font-size: 20px;
+    animation: fall linear infinite;
+    color: rgba(255,255,255,0.6);
+    z-index: 0;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh);
+    }
+}
+  section {
+    position: relative;
+    z-index: 1;
+}
+  .music-carousel {
+  width: 90%;
+  max-width: 600px;
+  margin: 30px auto;
+  text-align: center;
+  overflow: hidden;
+  border-radius: 15px;
+  background: rgba(255,192,203,0.1); /* Pink transparent */
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.music-slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.music-slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.music-slide h3 {
+  margin-bottom: 10px;
+  color: #800020; /* Maroon */
+}
+
+.music-buttons {
+  margin-top: 15px;
+}
+
+.music-buttons button {
+  background: #800020;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+.music-buttons button:hover {
+  background: #a8324a;
+}
+#movieEnding {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 2s ease;
+  z-index: 9999;
+}
+
+#movieEnding.show-ending {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.ending-text {
+  max-width: 700px;
+}
+
+.line {
+  opacity: 0;
+  font-size: 20px;
+  margin: 15px 0;
+  animation: fadeIn 2s forwards;
+}
+
+.final-line {
+  opacity: 0;
+  font-size: 28px;
+  margin-top: 30px;
+  font-weight: 600;
+  color: #f8c8dc;
+  animation: fadeIn 3s forwards;
+  animation-delay: 8s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- OPENING -->
+<section class="show">
+    <h1>Hai sayang kuuu yang manisss ❤️</h1>
+    <p>Aku bikin sesuatu kecil. Bukan besar, bukan mahal,  
+    tapi isinya penuh cerita diantaraa kau dan aakhhuuu</p>
+    <button onclick="scrollToNext()">Into our world ✨</button>
+</section>
+
+<!-- STORY -->
+<section>
+    <h2>The Beginning of us</h2>
+    <p>Remember the first time we played chapsa together? 
+    Awalnya I ga notis uu cuman ga sangka lama lama cintaakhhh</p>
+    <p>Dari chat random deep into the night. jadi cerita panjang
+    Dari “woi" jadi “sayang”</p>
+    <p>Dan entah sejak kapan, u jadi bagian paling nyaman dalam hari hari i.</p>
+</section>
+  <div class="photo-grid">
+    <img src="IMG_8492.jpeg">
+    <img src="IMG_8493.jpeg">
+    <img src="IMG_8494.jpeg">
+</div>
+  <div class="photo-grid">
+    <img src="IMG_8506.jpeg">
+    <img src="IMG_8507.jpeg">
+    <img src="IMG_8509.jpeg">
+</div>
+  <div class="photo-grid">
+    <img src="IMG_8510.jpeg">
+    <img src="IMG_8511.jpeg">
+    <video width="600" controls>
+  <source src="VIDEO-2026-02-12-17-54-19.mp4" type="video/mp4">
+</video>
+<div style="width:80%;background:#fff;border-radius:20px;">
+  <div style="width:100%;background:#800020;color:white;
+  padding:10px;border-radius:20px;">
+    100000000% Love 💕
+  </div>
+</div>
+</div>
+
+<!-- MOMENTS -->
+<section>
+    <h2>Momen Kecil yang Diam-Diam I Simpan</h2>
+    <p>• Cara u minta perhatiaann caperrr ke I.</p>
+    <p>• Cara u mintaaa ..... ituuuuu..............</p>
+    <p>• Cara u mintaa maaafff yang gemechh </p>
+    <p>Simple things that make me fall for you even deeper.</p>
+</section>
+  <div class="photo-grid">
+    <img src="IMG_8495.jpeg">
+    <img src="IMG_8496.jpeg">
+    <img src="IMG_8497.jpeg">
+</div>
+
+<!-- HUMOR -->
+<section>
+    <h2>Fun Fact About Us </h2>
+    <p>Kita gabisa ga callan sehari ajaaa</p>
+    <p>KOKO FETISH KETEK</p>
+    <p>Kita bisa marah marahan tapi pasti selalu baikan lagi<3</p>
+</section>
+  <div class="photo-grid">
+    <img src="IMG_8500.jpeg">
+    <img src="IMG_8499.jpeg">
+    <img src="IMG_8498.jpeg">
+</div>
+  <div class="photo-grid">
+    <img src="IMG_8501.jpeg">
+    <img src="IMG_8502.jpeg">
+    <img src="IMG_8503.jpeg">
+</div>
+<p id="typing"></p>
+<script>
+const text = "Aku sayang kamu lebih dari yang bisa aku jelasin 💗";
+let i = 0;
+
+function typeWriter() {
+  if (i < text.length) {
+    document.getElementById("typing").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typeWriter, 50);
+  }
+}
+
+typeWriter();
+</script>
+
+<!-- SECRET BUTTON -->
+
+<section>
+    <h2>Kayaknya masih ada yang belum kebuka deh...</h2>
+    <p>Klik tombol ini 100 kali kalau u beneran penasaran</p>
+    <button onclick="unlockSecret()">Buka Surprise 🔒</button>
+    <p id="counterText" style="margin-top:15px;"></p>
+</section>
+
+<!-- SURPRISE -->
+
+<section id="secret" class="hidden">
+    <h2>My heart for u 🤍</h2>
+    <p>I love you trully sayang from the bottom of my heart</p>
+    <p>Thankyou for always being with me. Through all my struggles.</p>
+    <p>Aku cuma mau bilang… aku bersyukur banget punya kamu.</p>
+    <p>Semoga kita tetap bareng, tetap ketawa bareng, tetap saling jaga.</p>
+    <p>Happy Valentine’s Day, my favorite person 💖</p>
+    <div class="heart">❤️</div>
+</section>
+  <!-- MUSIC CAROUSEL -->
+<section>
+  <h2>Our Playlist 🎵</h2>
+  <div class="music-carousel">
+    <div class="music-slides">
+      <div class="music-slide">
+        <h3>Perfect - Ed Sheeran</h3>
+        <audio controls>
+          <source src="Edd_Sheeran_-_Perfect_(mp3.pm)mp3" type="audio/mpeg">
+        </audio>
+      </div>
+      <div class="music-slide">
+        <h3>I Can't Help Falling In Love With You - Elvis Presley</h3>
+        <audio controls>
+          <source src="Elvis_Presly_-_I_Can_t_Help_Falling_In_Love_With_You_(mp3.pm).mp3" type="audio/mpeg">
+        </audio>
+      </div>
+      <div class="music-slide">
+        <h3>Penjaga Hati - Nadhif Basalamah</h3>
+        <audio controls>
+          <source src="nadhif basalamah - penjaga hati (Official Lyric Video).mp3" type="audio/mpeg">
+        </audio>
+      </div>
+    </div>
+
+    <div class="music-buttons">
+      <button onclick="prevMusic()">⬅️ Prev</button>
+      <button onclick="nextMusic()">Next ➡️</button>
+    </div>
+  </div>
+</section>
+
+<script>
+const sections = document.querySelectorAll("section");
+let clickCount = 0;
+const maxClicks = 100;
+
+window.addEventListener("scroll", () => {
+    sections.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if(top < window.innerHeight - 100){
+            sec.classList.add("show");
+        }
+    });
+});
+
+function scrollToNext(){
+    window.scrollTo({
+        top: window.innerHeight,
+        behavior: "smooth"
+    });
+}
+
+function unlockSecret(){
+    clickCount++;
+    const counterText = document.getElementById("counterText");
+
+    if(clickCount < maxClicks){
+        counterText.innerHTML = 
+        "Masih kurang " + (maxClicks - clickCount) + 
+        " klik lagi buat buka rahasianya 💌";
+    } else {
+        counterText.innerHTML = " I love you !";
+        document.getElementById("secret").classList.remove("hidden");
+        document.getElementById("secret").classList.add("show");
+        window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: "smooth"
+        });
+    }
+}
+</script>
+<script>
+function createHeart(){
+    const heart = document.createElement("div");
+    heart.classList.add("heart-bg");
+    heart.innerHTML = "❤";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+    heart.style.opacity = Math.random();
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+}
+
+setInterval(createHeart, 300);
+</script>
+  <script>
+    const musicSlides = document.querySelector('.music-slides');
+const totalMusic = document.querySelectorAll('.music-slide').length;
+let musicIndex = 0;
+
+function showMusic(i){
+  musicSlides.style.transform = `translateX(${-i * 100}%)`;
+}
+
+function nextMusic(){
+  musicIndex = (musicIndex + 1) % totalMusic;
+  showMusic(musicIndex);
+}
+
+function prevMusic(){
+  musicIndex = (musicIndex - 1 + totalMusic) % totalMusic;
+  showMusic(musicIndex);
+}
+  </script>
+<script>
+function startEnding(){
+  const ending = document.getElementById("movieEnding");
+  ending.classList.add("show-ending");
+
+  const lines = document.querySelectorAll(".line");
+  lines.forEach((line, index) => {
+    line.style.animationDelay = (index * 2) + "s";
+  });
+}
+
+// Auto trigger pas scroll paling bawah
+window.addEventListener("scroll", () => {
+  if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 5) {
+    setTimeout(startEnding, 1500);
+  }
+});
+</script>
+
+<!-- MOVIE ENDING -->
+<div id="movieEnding">
+  <div class="ending-text">
+    <p class="line">And after everything...</p>
+    <p class="line">All the laughs.</p>
+    <p class="line">All the fights.</p>
+    <p class="line">All the late night calls.</p>
+    <p class="final-line">I would still choose you. 🤍</p>
+  </div>
+</div>
+<footer>
+Made with feelings, not just code.
+</footer>
+</body>
+
+</html>
